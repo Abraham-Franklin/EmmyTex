@@ -1,0 +1,122 @@
+/* ================================
+   P O P P I N S
+================================ */
+/* ====== FONT IMPORTS ====== */
+
+/* Poppins – Regular, Medium, SemiBold, Bold (add more if needed) */
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+/* Inter Variable Font */
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter,Montserrat,Poppins,Roboto,Roboto_Mono,etc(1)/Inter/Inter-VariableFont_opsz,wght.ttf")
+         format("truetype");
+    font-weight: 100 900;
+}
+
+/* Montserrat Variable Font */
+@font-face {
+    font-family: "Montserrat";
+    src: url("./fonts/Inter,Montserrat,Poppins,Roboto,Roboto_Mono,etc(1)/Montserrat/Montserrat-VariableFont_wght.ttf")
+         format("truetype");
+    font-weight: 100 900;
+}
+
+
+
+
+/* ================================
+   C S S   V A R I A B L E S
+================================ */
+:root {
+  --dark-bg: #3C4044;
+  --light-bg: #dddcdb;
+  --orange-color: #FD7B41;
+  --subtle-orange: #edbf9b;
+
+
+  
+    /* FONTS */
+    --font-base: "Inter", sans-serif;
+    --font-heading: "Poppins", sans-serif;
+    --font-alt: "Montserrat", sans-serif;
+}
+
+*{  
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: var(--light-bg);
+    font-family: var(--font-base);
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header img{
+    width: 100px;
+}
+
+.navigation{
+    width: 55%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation .nav-list{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation .nav-list li{
+    list-style-type: none;
+}
+
+.navigation .nav-list li a{
+    text-decoration: none;
+    color: var(--orange-color);
+    font-weight: 600;
+    font-size: 18px;
+    font-family: var(--font-heading);
+}
+
+.nav-btn{
+    text-decoration: none;
+    /* color: var(--light-bg); */
+    color: var(--orange-color);
+    border: 2px solid var(--orange-color);
+    /* background-color: var(--orange-color); */
+    padding: 0.8% 1.8%;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 17px;
+    font-family: var(--font-heading);
+}
