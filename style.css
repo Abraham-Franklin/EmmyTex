@@ -1,14 +1,51 @@
 /* ================================
    BASE STYLES & VARIABLES
 ================================ */
+@font-face {
+    font-family: Montserrat;
+    src: url(fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url(fonts/Montserrat,Poppins/Poppins/Poppins-Medium.ttf);
+}
+
+@font-face {
+    font-family: Inter;
+    src: url(fonts/Inter/Inter-VariableFont_opsz,wght.ttf);
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf);
+}
+
+@font-face {
+    font-family: Rubik;
+    src: url(fonts/Rubik/Rubik-VariableFont_wght.ttf);
+}
+
 :root {
     --dark-bg: #3C4044;
     --light-bg: #dddcdb;
     --orange-color: #FD7B41;
     --subtle-orange: #edbf9b;
 
-    --font-base: 'Inter', sans-serif;
-    --font-heading: 'Poppins', sans-serif;
+    --font-base: Montserrat;
+    --font-heading: Poppins;
+    --font-inter: Inter;
+    --font-roboto: Roboto;
+    --font-rubik: Rubik;
+
+
+
+    --bg-red-gradient-hover: linear-gradient(145deg, #ea0046, #9c0231);
+    --bg-gradient-hover: linear-gradient(145deg, rgb(36, 39, 43), rgb(30, 32, 36));
+    --bg-red-gradient: linear-gradient(145deg, #9c0231, #ea0046);
+    --bg-gradient: linear-gradient(145deg, rgb(30, 32, 36), rgb(36, 39, 43));
+    --box-shadow: 0px 0px 35px 5px rgba(85, 85, 85, 0.2);
+    --box-shadow-hover: -5px -5px 15px -6px rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -19,6 +56,7 @@
 }
 
 body {
+    width: 100%;
     background-color: var(--light-bg);
     color: var(--dark-bg);
     line-height: 1.6;
@@ -34,15 +72,16 @@ a {
 ================================ */
 .header {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 0.6rem 2rem;
     background-color: var(--light-bg);
     color: var(--dark-bg);
     position: sticky;
     top: 0;
     z-index: 100;
     font-family: var(--font-heading);
+    /* font-weight: 700; */
 }
 
 .logo {
@@ -52,13 +91,15 @@ a {
 .navigation {
     display: flex;
     align-items: center;
-    width: 50%;
+    width: 65%;
     display: flex;
     justify-content: space-between
 }
 
 .navigation a{
-    font-weight: bolder;
+    font-family: var(--font-heading);
+    /* font-weight: 600; */
+    font-size: 18px;
 }
 
 .nav-list {
@@ -69,7 +110,6 @@ a {
 
 .nav-list li a {
     color: var(--dark-bg);
-    font-weight: 500;
     transition: color 0.3s;
 }
 
@@ -127,7 +167,6 @@ a {
 ================================ */
 #hero-section{
     width: 100%;
-    padding: 0% 10% 0% 10%;
 }
 
 .hero-section {
@@ -140,6 +179,7 @@ a {
     text-align: center;
     background-position: center;
     background-size: cover;
+    margin: 0% 13% 0% 13%;
 }
 
 .hero-content{
@@ -223,6 +263,9 @@ a {
     white-space: nowrap;
     margin-top: 1.5rem;
     padding: 0.8rem 0;
+    /* box-shadow: 0px 40px 70px 7px; */
+    width: 98%;
+    margin: auto;
 }
 
 .marquee-track {
@@ -254,13 +297,26 @@ a {
 
 .section-title {
     font-family: var(--font-heading);
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.2rem;
+}
+
+.section-title::before{
+    content: "";
+    width: 10rem;
+    height: 0.3rem;
+    background: var(--orange-color);
+    position: absolute;
+    bottom: 0;
+    transform: translateX(28%);
 }
 
 .section-subtitle {
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-bottom: 3rem;
+    letter-spacing: 5%;
 }
 
 .service-image{
@@ -279,9 +335,9 @@ a {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2rem;
+    row-gap: 3rem;
     width: 65%;
     margin: 0 auto;
-
     transform: translateY(-100px);
 }
 
@@ -291,6 +347,7 @@ a {
     border-radius: 10px;
     transition: transform 0.3s;
     box-shadow: 1px 1px 5px -0px var(--dark-bg);
+    position: relative;
 }
 
 /* .service-card:hover {
@@ -299,8 +356,37 @@ a {
 
 .service-icon {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -15%; /* sits on top edge */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 50px;
+    height: 50px;
+    background-color: var(--orange-color);
+    color: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 40px 60px;
+}
+
+
+.services-grid h3{
+    margin-top: 15%;
+    font-family: var(--font-heading);
+    font-size: 20px;
+}
+
+.services-grid p{
+    font-family: var(--font-base);
+    letter-spacing: 10%;
+    font-size: 18px;
+    font-weight: 400;
+    text-align: justify;
+    margin-top: 3%;
 }
 
 /* ================================
@@ -326,9 +412,10 @@ a {
     line-height: 120%;
     position: relative;
     padding-left: 35px;
+    font-family: var(--font-heading);
 }
 
-.section-title::before{
+.about-section-title::before{
     content: "";
     position: absolute;
     left: 0;
@@ -341,10 +428,15 @@ a {
 .about-text-div{
     text-align: left;
     width: 100%;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 5%;
+    font-weight: 500;
 }
 
 .about-text {
     /* margin: 1rem auto; */
+    /* font-family: var(--font-base); */
     font-family: var(--font-base);
 }
 
@@ -358,6 +450,7 @@ a {
     font-weight: bolder;
     font-size: 40px;
     margin-bottom: 3%;
+    letter-spacing: 5%;
 }
 
 .about-stmt{
@@ -367,21 +460,25 @@ a {
 
 .about-stmt .fa-solid{
     color: var(--orange-color);
-    font-weight: bolder;
-    font-size: 3rem;
+    font-weight: 600;
+    font-size: 2.5rem;
 }
 
 .about-stmt div{
-    margin-left: 3%;
+    margin-left: 2.5%;
 }
 
 .about-stmt .m-v{
-    font-weight: bolder;
+    font-weight: 800;
+    font-size: 1.8rem;    
 }
 
-.about-mission {
-    font-family: var(--font-heading);
+.m-v-t{
+    /* font-family: var(--font-heading); */
+    font-size: 1rem;
+    letter-spacing: 6%;
 }
+
 
 /* ================================
    FAQ SECTION
@@ -392,8 +489,10 @@ a {
 }
 
 .faq-section article{
-    display: grid;
-    grid-template-columns: auto auto;
+    /* display: grid;
+    grid-template-columns: auto auto; */
+    width: 70%;
+    margin: auto;
 }
 
 .faq-item {
@@ -404,19 +503,34 @@ a {
     text-align: left;
 }
 
+.collapse-div{
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 6px 0px var(--subtle-orange);
+    border-radius: 8px;
+    padding: 10px;
+    align-items: center;
+    background-color: #eeecec;
+}
+
 .faq-question {
     width: 100%;
-    background-color: var(--light-bg);
     border: none;
     padding: 1rem;
     cursor: pointer;
     font-weight: 600;
     border-radius: 5px;
     transition: background 0.3s;
+    text-align: left;
+    background-color: #eeecec;
 }
 
-.faq-question:hover {
-    background-color: var(--subtle-orange);
+.collapse-div:hover {
+    /* background-color: var(--subtle-orange); */
+    transition-property: transform;
+    transition-duration: 0.1s;
+
+    transform: scale(1.009);
 }
 
 .faq-answer {
