@@ -84,6 +84,10 @@ a {
     /* font-weight: 700; */
 }
 
+#mobileMenu{
+    display: none;
+}
+
 .logo {
     height: 65px;
 }
@@ -161,6 +165,11 @@ a {
     color: var(--dark-bg);
     margin: 0.5rem 0;
 }
+
+.mobile-nav-list{
+    display: none;
+}
+
 
 /* ================================
    HERO SECTION
@@ -346,7 +355,8 @@ a {
     padding: 1rem 2rem 2rem 2rem;
     border-radius: 10px;
     transition: transform 0.3s;
-    box-shadow: 1px 1px 5px -0px var(--dark-bg);
+    /* box-shadow: 1px 1px 5px -0px var(--dark-bg); */
+    box-shadow: 0px 0px 35px 5px rgba(85, 85, 85, 0.2);
     position: relative;
 }
 
@@ -645,37 +655,5 @@ a {
     }
     .footer-about, .footer-links, .footer-contact {
         flex: 1 1 100%;
-    }
-}
-
-
-/* ================================
-   RESPONSIVE STYLES
-================================ */
-@media (min-width: 920px) {
-    .hero-section {
-        /* background: url('Images/hero-1.jpg') no-repeat center center/cover;
-        color: #fff;
-        text-align: center; */
-        /* padding: 10%; */
-        /* height: 70vh */
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-list {
-        display: none;
-    }
-    .mobile-menu-icon {
-        display: block;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section h1 {
-        font-size: 1.8rem;
-    }
-    .hero-section p {
-        font-size: 1rem;
     }
 }
