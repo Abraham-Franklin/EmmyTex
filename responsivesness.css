@@ -208,8 +208,13 @@
   .marquee-track span { font-size: 0.92rem; margin-right: 1rem; }
 
   /* service card text smaller */
-  .service-card h3 { font-size: 0.98rem; }
-  .service-card p { font-size: 0.9rem; }
+  /* .service-card h3 { font-size: 0.98rem; }
+  .service-card p { font-size: 0.9rem; } */
+
+  .services-grid{margin-top: 23%;}
+  .service-icon { width: 20px; height: 90px; top:-20px; font-size: 1.8rem; top: -13%; padding: 1.7rem 3rem;}
+  .services-grid h3{font-size: 20px; margin-top: 16%;}
+  .services-grid p{font-size: 16px;}
 
   /* faq collapsible */
   .collapse-div .faq-question { font-size: 0.92rem; }
